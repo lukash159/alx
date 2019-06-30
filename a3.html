@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+	<meta charset="UTF-8"/>
+	<title>...</title>
+	</head>	
+
+	<body>
+	<form action="#" method="get">
+	<h2>
+		Formularz rezerwacji biletu lotniczego
+	</h2>
+	<p>
+	Twoje imię:<br/>
+	<input type="text" name="imie" /> 
+	</p>
+	
+	<p>
+	Twoje nazwisko:<br/>
+	<input type="text" name="nazwisko" />
+	</p>
+	
+	<p>
+	Data wtlotu:<br/>
+	<input type="date" name="data_wylotu" />
+	</p>
+	
+	<p>
+	Data przylotu:<br/>
+	<input type="date" name="data_przylotu" />
+	</p>
+	
+	<p>
+	Wylot z:<br/>
+	<select name="Wylot">
+		<option value="1"> Warszawa </opcion>
+		<option value="2"> Szczecin </opcion>
+		<option value="3"> Wrocław </opcion>
+		<option value="4"> Gdańsk </opcion>
+	</select> <br/>
+	</p>
+	
+	<p>
+	Przylot do:<br/>
+	<select name="Przylot">
+		<option value="1"> Warszawa </opcion>
+		<option value="2"> Szczecin </opcion>
+		<option value="3"> Wrocław </opcion>
+		<option value="4"> Gdańsk </opcion>
+	</select> <br/>
+	</p>
+	
+	<p>
+	Klasa VIP:<br/>
+		<input type="radio" name="vip" value="yes"/>Tak<br/>	
+		<input type="radio" name="vip" value="no"/>Nie<br/>
+	</p>
+	
+	<p>
+	Posiłek:<br/>
+		<input type="checkbox" name="Przystawka" value="Przystawka"/>Przystawka<br/>	
+		<input type="checkbox" name="Obiad" value="Obiad"/>Obiad<br/>
+		<input type="checkbox" name="Deser" value="Deser"/>Deser
+	</p>
+	
+	<p>
+	Dodatkowe informacje:<br/>
+		<textarea name="uwagi"></textarea>
+	</p>
+	
+	<input type="submit" value="Zarezerwuj" />
+		<input type="reset" value="Anuluj" /><br/>
+	
+	</form>
+	</body>
+	
+	</html>

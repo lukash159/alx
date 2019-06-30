@@ -1,0 +1,74 @@
+body
+{
+	font-family:lato;
+}
+
+h1
+{
+	text-align:center;
+	font-size:40px;
+}
+
+#tresc
+{
+	margin-left:350px;
+	margin-right:20px;
+	padding-left:10px;
+	border-left: 1px solid black;
+}
+
+#menu
+{
+	position:fixed;
+	top:10px;
+	width:300px;
+}
+
+#menu ul li
+{
+	border-bottom:1px solid #ddd;
+	list-style:none;
+}
+
+a
+{
+	style:none;
+	color:black;
+	border-bottom:1px dotted gray;
+	text-decoration:none;
+}
+
+a:hover
+{
+	color:white;
+	background-color:#ccc;
+}
+
+#stopka
+{
+	border-top:1px solid black;
+	font-size:12px;
+	text-align:center;
+}
+
+.ilustracja
+{
+	float:right;
+	padding:10px;
+	margin:10;
+	border:1px solid gray;
+}
+
+.ilustracja p
+{
+	text-align:center;
+}
+
+.wiersz
+{
+	font-style:italic;
+	font-size:40px;
+	font-family:"Times New Roman";
+	margin-left:80px;
+	color:#483d8b;
+}

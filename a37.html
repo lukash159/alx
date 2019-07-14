@@ -9,7 +9,23 @@
 	
 	<script>
 		
+		let liczby = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 		
+		
+		for(let k=0;k<liczby.length;k++)
+		{
+			liczby[k][k]=1;
+			liczby[k][liczby.length-k-1]=1;
+		}
+		
+		for(let i=0;i<liczby.length;i++)
+		{
+			for (let j=0;j<liczby.length;j++)
+			{
+				document.write(`  ${liczby[i][j]}  `);
+			}
+			document.write(` <br>  `);
+		}
 		
 	</script>
 	

@@ -9,18 +9,37 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
+		let tab1 = []
+		let tab2 = []
+		let pom=0;
+		for(let i=0;i<10;i++)
+		{
+			let los = Math.floor((Math.random()*20)+1);
+			tab1.push(los);
 			
-		liczba++;
-		
+			los = Math.floor((Math.random()*20)+1);
+			tab2.push(los);
 		}
+		console.log(tab1,tab2);
 		
+		for(let k=0;k<10;k++)
+		{
+			let znaleziono=false;
+			
+			for(let l=0;l<10;l++)
+			{
+				if (tab1[k]==tab2[l])
+				{
+					znaleziono=true;
+					break;
+					//console.log(tab1[k]);
+				}
+			}
+			if (znaleziono==false)
+			{
+			console.log(tab1[k]);
+			}
+		}
 		
 	</script>
 	

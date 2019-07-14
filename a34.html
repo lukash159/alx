@@ -1,0 +1,52 @@
+﻿<!doctype html>
+	<html>
+	<head>
+		<title>...</title>
+		<meta charset="utf-8">
+	
+	</head>
+	<body>
+	
+	<script>
+		var operacja="";
+		function oblicz(a,b,operacja)
+		{
+			if(operacja=="+")
+			{
+			oblicz=a+b;
+			}
+			else if (operacja=="-")
+			{
+			oblicz=a-b;
+			}
+			else if (operacja=="*")
+			{
+			oblicz=a*b;
+			}
+			else if (operacja=="/")
+			{
+			oblicz=a/b;
+			}
+			return(oblicz);
+		}
+				
+		var a=parseInt(prompt("podaj liczbę 1"));
+		var b=parseInt(prompt("podaj liczbę 2"));
+		
+		
+		while (true)
+		{
+		operacja=prompt("podaj znak");
+		if(operacja=="+" ||operacja=="-" ||operacja=="*" ||operacja=="/")
+			{
+				break;
+			}
+		}
+		
+		var x=oblicz(a,b,operacja);
+		document.write(`${a} ${operacja} ${b} = ${x}  `);
+		
+		</script>
+	
+	</body>
+	</html>

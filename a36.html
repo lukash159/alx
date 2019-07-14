@@ -1,0 +1,42 @@
+﻿<!doctype html>
+	<html>
+	<head>
+		<title>...</title>
+		<meta charset="utf-8">
+	
+	</head>
+	<body>
+	
+	<script>
+		
+		let samochody = ["bmw","audi"]
+		let modele_bmw = ["x1","x2","x3"]
+		let modele_audi = ["a3","a6","a8"]
+		
+		for(let i=0;i<samochody.length;i++)
+		{
+			if(samochody[i]=="bmw")
+			{
+			document.write(`${samochody[i]} `);
+				for(let j=0;j<modele_bmw.length;j++)
+				{
+				document.write(` ${modele_bmw[j]}`);
+				}
+			}
+			else if (samochody[i]=="audi")
+			{
+			document.write(`  <br>  ${samochody[i]} `);
+				for(let k=0;k<modele_audi.length;k++)
+				{
+					document.write(` ${modele_audi[k]} `);
+				}
+			}
+		}
+			
+			
+			
+		
+	</script>
+	
+	</body>
+	</html>

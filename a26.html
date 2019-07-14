@@ -9,17 +9,35 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
+			var liczba = 0;
+			var licznik=0;
+			var x=Math.floor((Math.random()*100)+2);
+			//console.log(licznik);
+		
+		
+			while(liczba!=x && licznik<5)
+			{	
+				var liczba = parseInt(prompt("podaj liczbę"));
+				licznik++;
+				if(liczba>x)
+				{
+					document.write(`${liczba} ${x}  za dużo</br>`);
+				}
+				else if(liczba<x)
+				{
+					document.write(`${liczba} ${x} za mało</br>`);
+				}
+				
+				else if(liczba==x)
+				{
+					document.write(`${liczba} ${x}  trafiles</br>`);
+				}
+				else 
+				{
+					document.write(`za duzo prób`);
+				}
 			}
 			
-		liczba++;
-		
-		}
 		
 		
 	</script>

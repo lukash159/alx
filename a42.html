@@ -9,13 +9,16 @@
 	
 	<script>
 		
-		for (var i=1;i<=10;i++)
-		{
-			for (var j=1;j<=10;j++)
+		var liczba=1;
+		while(liczba!=101)
+		{	
+			if(liczba%2==0)
 			{
-				document.write(`  ${j*i}  `);
+			document.write(`${liczba}</br>`);
 			}
-			document.write(`<br>`);
+			
+		liczba++;
+		
 		}
 		
 		

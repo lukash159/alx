@@ -9,17 +9,15 @@
 	
 	<script>
 		
-		for (var i=1;i<=10;i++)
+		function pole(r)
 		{
-			for (var j=1;j<=10;j++)
-			{
-				document.write(`  ${j*i}  `);
-			}
-			document.write(`<br>`);
+			document.write(` pole kola ${3.14*r*r}  `);
 		}
 		
-		
-	</script>
+		var r=parseInt(prompt("podaj liczbę"));
+		pole(r);
+
+		</script>
 	
 	</body>
 	</html>

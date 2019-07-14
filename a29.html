@@ -9,20 +9,28 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
-			
-		liczba++;
+		var suma=0;
+		var licznik=0;
+		var srednia=0;
 		
+		while (true)
+		{
+			var liczba=parseInt(prompt("podaj liczbę"));
+			{
+				if(liczba==0)
+				{
+					break;
+				} 
+				suma=suma+liczba;
+				licznik++;
+			}	
 		}
+		srednia=suma/licznik;
+		document.write(`suma ${suma} <br> ilosc ${licznik} <br> srednia ${srednia} `);
+		
 		
 		
 	</script>
-	
+
 	</body>
 	</html>

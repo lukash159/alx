@@ -9,16 +9,57 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+		let gra = [[0,0,0],[0,0,0],[0,0,0]];		
+		let gracz = "O";
+		
+		while(true)
+		{
+			//document.clear();
+			let x = parseInt(prompt("Gracz "+gracz+" podaj wsp. X"));
+			let y = parseInt(prompt("Gracz "+gracz+" podaj wsp. Y"));
+		
+			
+			if(gra[x][y] != 0)
 			{
-			document.write(`${liczba}</br>`);
+				alert("tracicz kolejkę");
 			}
 			
-		liczba++;
-		
+			else
+			{
+				gra[x][y] = gracz;
+			}
+			
+			if (
+				(gra[0][0] == gra[0][1] && gra[0][0] == gra[0][2] && gra[0][0] != 0) || 
+				(gra[1][0] == gra[1][1] && gra[1][0] == gra[1][2] && gra[1][0] != 0) || 
+				(gra[2][0] == gra[2][1] && gra[2][0] == gra[2][2] && gra[2][0] != 0) ||
+				(gra[0][0] == gra[1][0] && gra[0][0] == gra[2][0] && gra[0][0] != 0) || 
+				(gra[0][1] == gra[1][1] && gra[0][1] == gra[2][1] && gra[0][1] != 0) || 
+				(gra[0][2] == gra[1][2] && gra[0][2] == gra[2][2] && gra[0][2] != 0) ||
+				(gra[0][0] == gra[1][1] && gra[0][0] == gra[2][0] && gra[0][0] != 0) || 
+				(gra[0][2] == gra[1][1] && gra[0][2] == gra[2][0] && gra[0][2] != 0) 
+				)
+			{
+				alert("Wygrana, wygrał zawodnik "+gracz);
+				break;
+			}
+			
+			for (i=0;i<3;i++)
+			{
+				for (j=0;j<3;j++)
+				{
+					document.write(`${gra[i][j]}`);
+				}
+				document.write(`<br>`);
+			}
+			if (gracz=="O")
+			{
+				gracz="X";
+			}
+			else
+			{
+				gracz="O";
+			}
 		}
 		
 		

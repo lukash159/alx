@@ -9,17 +9,53 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+		let unikat = new Set();
+		let licznik=0;
+		let slowo="alx";
+		let da=0;
+			
+			while(true)
 			{
-			document.write(`${liczba}</br>`);
+			let liczba = prompt("podaj dowolny znak");
+			
+				if (liczba=="")
+				{
+					break;
+				}
+				document.write(`${liczba} <br>`);
+				unikat.add(liczba);
+				licznik++;
+			}
+						
+			
+			
+			/*if (unikat.has("a") && unikat.has("l") && unikat.has("x"))
+			{
+				document.write(`Z podanych liter da się ułożyć słowo ALX <br>`);
+			}*/
+			
+			for (i=0;i<slowo.length;i++)
+			{
+				if (unikat.has(slowo[i]))
+				{
+					da++;
+				}
+				
 			}
 			
-		liczba++;
-		
-		}
+			
+			document.write(`<br><br><br><br>`);
+			document.write(`Liczba unikalnych znaków: ${unikat.size} <br>`);
+			
+			for (let i of unikat)
+			{
+				document.write(`${i} <br>`);
+			}
+			
+			if (da==slowo.length)
+			{
+				document.write(`Z podanych liter da się ułożyć słowo ALX <br>`);
+			}
 		
 		
 	</script>

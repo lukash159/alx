@@ -9,19 +9,53 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
-			
-		liczba++;
+		let sklep = new Map();
+		sklep.set("chleb",2.50);
+		sklep.set("sok",1.50);
+		sklep.set("woda",3.80);
 		
+		let koszyk=[];
+		let suma=0;
+		
+		while(true)
+		{
+			let prod = prompt("podaj nazwę produktu");
+				
+				if (prod === "")
+				{
+					break;
+				}
+				
+			/*	else if(prod != "chleb" && prod != "sok" && prod != "woda" )
+				{
+					alert("Nie ma takiego produktu");
+				} */
+				
+				else if(sklep.has(prod))
+				{
+					koszyk.push(prod);
+					
+				} 
+				
+				else
+				{
+				
+					alert("Nie ma takiego produktu");
+				}
 		}
+			
+			
 		
+		document.write(`<h1>Podsumowanie Twoich zakupów</h1>`);
 		
+		for(let i=0;i<koszyk.length;i++)
+		{
+			document.write(`${[i+1]}. ${koszyk[i]} cena: ${sklep.get(koszyk[i])}`);
+			document.write(` <br> `);
+			suma=suma+sklep.get(koszyk[i]);
+		}
+				
+		document.write(`<h3>Razem do zaplaty:  ${suma} zł</h3>`);
 	</script>
 	
 	</body>

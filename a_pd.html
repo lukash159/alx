@@ -1,0 +1,42 @@
+﻿<!doctype html>
+	<html>
+	<head>
+		<title>Cwiczenie 26_4</title>
+		<meta charset="utf-8">
+	
+	</head>
+	<body>
+	
+	<script>
+	
+		let kt = [];
+		
+		while(true)
+		{
+			let imie = prompt("Podaj imię: ");
+			let nazwisko = prompt("Podaj nazwisko: ");
+			let telefon = prompt("Podaj nr telefonu: ");
+			
+				if (imie === "" && nazwisko === "" && telefon === "")
+				{
+					break;
+				}
+				
+				else
+				{
+					kt.push([imie,nazwisko,telefon]);
+				}
+		}
+		
+		for (i=0;i<kt.length;i++)
+			{
+				for (j=0;j<3;j++)
+				{
+					document.write(`${kt[i][j]}     `);
+				}
+				document.write(`<br>`);
+			}
+	</script>
+	
+	</body>
+	</html>

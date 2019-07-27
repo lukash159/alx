@@ -9,17 +9,49 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
-			
-		liczba++;
+	/*	let map = new Map();
+		map.set("chleb",2.50);
+		map.set("sok",2.20);
+		map.set("woda",3.80);
 		
-		}
+		console.log(map);
+		
+		console.log(map.get("chleb"));
+		
+		console.log(map.keys());
+		console.log(map.values());
+		console.log(map.has("sok"));
+		console.log(map.size);
+		map.delete("sok");
+		console.log(map);
+		console.log(map.size);
+		map.clear();
+		console.log(map);
+	*/
+
+		let x = prompt("podaj liczbę 1");
+		let y = prompt("podaj liczbę 2");
+		let wynik=1;
+	
+		let map = new Map();
+		map.set("zero",0);
+		map.set("jeden",1);
+		map.set("dwa",2);
+		map.set("trzy",3);
+		map.set("cztery",4);
+		map.set("piec",5);
+		map.set("szesc",6);
+		map.set("siedem",7);
+		map.set("osiem",8);
+		map.set("dziewiec",9);
+		
+		
+		wynik=map.get(x)+map.get(y);
+		console.log(map.get(x));
+		console.log(map.get(y));
+		document.write(`${wynik}`);
+		
+		
 		
 		
 	</script>

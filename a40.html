@@ -8,18 +8,53 @@
 	<body>
 	
 	<script>
+	
+		let liczba="9112";
+		let liczba2="5842";
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+	function wypisz(a)
+	{
+		for (let i=0;i<a.length;i++)
+		{
+			switch(a[i])
 			{
-			document.write(`${liczba}</br>`);
+			case "1":		
+			document.write(` jeden `);
+			break;
+			case "2":		
+			document.write(` dwa `);
+			break;
+			case "3":		
+			document.write(` trzy `);
+			break;
+			case "4":		
+			document.write(` cztery `);
+			break;
+			case "5":		
+			document.write(` piec `);
+			break;
+			case "6":		
+			document.write(` szesc `);
+			break;
+			case "7":		
+			document.write(` siedem `);
+			break;
+			case "8":		
+			document.write(` osiem `);
+			break;
+			case "9":		
+			document.write(` dziewiec `);
+			break;
+			case "0":		
+			document.write(` zero `);
+			break;
 			}
-			
-		liczba++;
-		
 		}
+		document.write(` <br> `);
+	}
+	wypisz(liczba);
+	wypisz(liczba2);
+		
 		
 		
 	</script>

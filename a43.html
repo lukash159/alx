@@ -9,18 +9,35 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
+	/*	let dowolna = new Set();
+			dowolna.add(1);
+			dowolna.add(2);
+			dowolna.add(1);
 			
-		liczba++;
-		
-		}
-		
+			console.log(dowolna);
+			dowolna.delete(1);
+			console.log(dowolna);
+			console.log(dowolna.has(2));
+			console.log(dowolna.size);	*/
+
+		let liczba = new Set();
+			
+			while(true)
+			{
+			liczba.add(Math.floor((Math.random()*10)+1));
+			
+				if (liczba.size==6)
+				{
+					break;
+				}
+			}
+			console.log(liczba);
+			
+			for (let i of liczba)
+			{
+				document.write(`${i}`);
+				document.write(`<br>`);
+			}
 		
 	</script>
 	

@@ -9,19 +9,32 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
+		class Smaochod{
+	
+		constructor(_marka, _model, _silnik, _paliwo, _kolor){
 			
-		liczba++;
+			this.marka = _marka ;
+			this.model = _model;
+			this.silnik = _silnik;	
+			this.paliwo = _paliwo;
+			this.kolor = _kolor;
+		}	
 		
+		showDetails()
+		{
+			console.log(this.marka+" "+this.model+" "+this.silnik+" "+this.paliwo+" "+this.kolor);
 		}
+		}
+	
 		
-		
+		bmw = new Smaochod("bmw", "x1", 2.0, "diesel", "czarny");
+		audi = new Smaochod("audi", "a6", 1.8, "benzyna", "biały");
+		opel = new Smaochod("opel", "omega", 3.0, "benzyna", "srebrny");
+		ford = new Smaochod("ford", "fozus", 1.5, "diesel", "biały");
+		fiat = new Smaochod("fiat", "tipo", 1.4, "benzyna", "niebieski");
+
+		bmw.showDetails();
+		//audi.showDetails();
 	</script>
 	
 	</body>

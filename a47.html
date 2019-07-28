@@ -9,18 +9,23 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
-			
-		liczba++;
+		ja = {
+		imie: "Łukasz",
+		nazwisko: "Wielgosz",
 		
+		witaj: function(){
+			console.log("Witaj, "+this.imie+" "+this.nazwisko);
 		}
-		
+	}
+	
+	ja.witaj();
+	
+	ja.stanowisko = "Administrator";
+	ja.praca = function(){
+		console.log("stanowisko na jakim pracuje to: "+this.stanowisko);
+	}
+	
+	ja.praca();
 		
 	</script>
 	

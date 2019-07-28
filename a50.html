@@ -9,17 +9,53 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+		class Kurs
+		{
+			constructor(_nazwa, _termin, _miejsce)
 			{
-			document.write(`${liczba}</br>`);
+			this.nazwa=_nazwa;
+			this.termin=_termin;
+			this.miejsce=_miejsce;
+			this.kursanci=[];
 			}
 			
-		liczba++;
-		
+			showDetails()
+			{
+			
+				for (let i=0;i<this.kursanci.length;i++)
+				{
+				console.log(this.nazwa+" "+this.termin+" "+this.miejsce+" "+this.kursanci[i][0]+" "+this.kursanci[i][1]);
+				}
+				
+			}
+			
+			showDetails2()
+			{
+			console.log(this.nazwa+" "+this.termin+" "+this.miejsce);
+				for (let i=0;i<this.kursanci.length;i++)
+				{
+				console.log(this.kursanci[i][0]+" "+this.kursanci[i][1]);
+				}
+				
+			}
+			
+			addKursanci(imie, nazwisko)
+			{
+				this.kursanci.push([imie, nazwisko]);
+			}
 		}
+		
+		php = new Kurs("PHP", "2018-06-26", "Warszawa");
+		js = new Kurs("JS", "2018-07-27", "Kraków");
+		db = new Kurs("DB", "2018-08-10", "Poznań");
+		
+		db.showDetails();
+		php.addKursanci("Jan", "Nowak");
+		php.addKursanci("Olek", "Kowalski");
+		php.showDetails();
+		console.log("");
+		console.log("");
+		php.showDetails2();
 		
 		
 	</script>

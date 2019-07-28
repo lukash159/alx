@@ -8,19 +8,52 @@
 	<body>
 	
 	<script>
+	
+		let allStudenci=[];
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+		class Studenci
+		{
+			constructor(_imie, _nazwisko, _wiek)
 			{
-			document.write(`${liczba}</br>`);
+			this.imie=_imie;
+			this.nazwisko=_nazwisko;
+			this.wiek=_wiek;
 			}
 			
-		liczba++;
-		
+			showDetails()
+			{
+				document.write(this.imie+" "+this.nazwisko+" "+this.wiek+"<br>");
+			}	
+			
+			toString()
+			{
+				return (this.imie+" "+this.nazwisko+" "+this.wiek+"<br>");
+			}	
+		}
+	
+	while(true)
+		{
+			let imie = prompt("Podaj imię: ");
+			let nazwisko = prompt("Podaj nazwisko: ");
+			let wiek = prompt("Podaj wiek: ");
+			
+				if (imie === "" && nazwisko === "" && wiek === "")
+				{
+					break;
+				}
+				
+				else
+				{
+				let	student = new Studenci(imie, nazwisko, wiek);
+					allStudenci.push(student);
+				}
 		}
 		
+		for (let osoba of allStudenci)
+		{
+			//osoba.showDetails();
+			showDetails(osoba);
+		}
 		
 	</script>
 	

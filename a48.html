@@ -9,18 +9,20 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
+	class Smaochod{
+	
+		constructor(){
 			
-		liczba++;
+			this.kolor;
+			this.felgi;
+			this.klima;		 
+		}	
+	}
 		
-		}
+		bmw = new Smaochod();
+		bmw.kolor="biały";
 		
+		console.log(bmw.kolor);
 		
 	</script>
 	

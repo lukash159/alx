@@ -9,18 +9,77 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+		let sklep = new Map();
+		sklep.set("chleb",2.50);
+		sklep.set("sok",1.50);
+		sklep.set("woda",3.50);
+		
+		let koszyki = [];
+		
+		class Koszyk
+		{
+			constructor()
 			{
-			document.write(`${liczba}</br>`);
+				this.map = new Map();
+			}	
+
+			add(produkt, ilosc)
+			{
+				this.map.set(produkt, ilosc);
 			}
 			
-		liczba++;
-		
+			toString()
+			{
+				let tmp="";
+				for (let produkt of this.map.keys())
+				{
+					tmp+=(produkt+" "+this.map.get(produkt)+"</br>");
+				}
+					return tmp;
+			}
 		}
 		
+		
+		while(true)
+		{
+			let decyzja = prompt("Czy chcesz rozpocząć zakupy? ");
+			if (decyzja == "t")
+			{
+				let obj = new Koszyk();
+				while(true)
+					{
+						let produkt = prompt("Podaj nazwę produktu: ");
+						if (produkt == "")
+						{
+							break;	
+						}
+							let ilosc = parseInt(prompt("Podaj ilość: "));
+							obj.add(produkt, ilosc);
+					}	
+			koszyki.push(obj);
+			}
+			else
+			{
+				break;
+			}
+			
+		}		
+		
+		let i=0;
+		
+		for (let koszyk of koszyki)
+		{
+			i++;
+			document.write("Zawartość koszyka nr: "+i+"<br/>");
+			let suma=0;
+			for (let produkt of koszyk.map.keys())
+			{
+				document.write(produkt+" Ilość: "+koszyk.map.get(produkt)+"<br/>");
+				suma+=koszyk.map.get(produkt)*sklep.get(produkt);
+			}
+			document.write("Do zapłaty: "+suma+"<br/>");
+			document.write("-------------------------------<br/>");
+		}
 		
 	</script>
 	

@@ -9,17 +9,105 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+		class Pacjent
+		{
+			constructor(_imie, _nazwisko)
 			{
-			document.write(`${liczba}</br>`);
+				this.imie=_imie;
+				this.nazwisko=_nazwisko;
+				this.terminy=[];
 			}
 			
-		liczba++;
-		
+			przedstawSie()
+			{
+				return (this.imie+" "+this.nazwisko);
+			}
+			
+			pokazTerminy()
+			{
+				let dane="";
+				for(let tmp of this.terminy)
+				{
+					dane += "Dzień: "+tmp[0]+", godzina: "+tmp[1]+"\n";
+				}
+				return dane;
+			}
 		}
+		
+		class Przychodnia
+		{
+			constructor(_nazwaPrzychodni)
+			{
+				this.nazwaPrzychodni=_nazwaPrzychodni;
+				this.pacjenci=[];
+				this.menu();
+			}
+			
+
+		
+		menu()
+		{	
+			while(true)
+			{
+				let dec = prompt("Witaj w przychodni "+this.nazwaPrzychodni+" \n D-dodaj, U-usun, T-termin, L-lista, K-koniec");
+				
+				if (dec == "k")
+				{
+					break;
+				}
+				
+				else if (dec == "d")
+				{
+					let imie = prompt("Podaj imie: ");
+					let nazwisko = prompt("Podaj nazwisko: ");
+					
+					let pacjent = new Pacjent(imie,nazwisko);
+					this.pacjenci.push(pacjent);
+				}
+				
+				else if (dec == "u")
+				{
+					let nazwisko = prompt("Podaj nazwisko do usunięcia ");
+					for (let i=0;i<this.pacjenci.length;i++)
+					{
+						if( nazwisko == this.pacjenci[i].nazwisko)
+						{
+							this.pacjenci.splice(i,1);
+							break;
+						}
+					}
+				}
+				
+				else if (dec == "t")
+				{
+					let nazwisko = prompt("Podaj nazwisko pacjenta ");
+					let data = prompt("Podaj datę ");
+					let godzina = prompt("Podaj godzinę ");
+					for (let i=0;i<this.pacjenci.length;i++)
+					{
+						if( nazwisko == this.pacjenci[i].nazwisko)
+						{
+							this.pacjenci[i].terminy.push([data,godzina]);
+							break;
+						}
+					}
+				}
+				
+				else if (dec == "l")
+				{
+					console.clear();
+					for (let i=0;i<this.pacjenci.length;i++)
+					{
+						console.log(this.pacjenci[i].przedstawSie());
+						console.log(this.pacjenci[i].pokazTerminy());
+					}
+				}
+				
+			}
+		}
+	}
+		
+	przychodnia = new Przychodnia("LABO");
 		
 		
 	</script>

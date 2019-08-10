@@ -8,20 +8,38 @@
 	<body>
 	
 	<script>
-		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
-			
-		liczba++;
-		
+
+	
+	let pytania=["a: tak/ b: nie","a: tak/ b: nie","a: tak/ b: nie","a: tak/ b: nie","a: tak/ b: nie"];
+	let poprawna=["a","a","a","a","a"];
+	
+	while(true)
+	{
+		let odpowiedzi=[];
+		let i=0;
+		let wynik=0;
+	
+	for(let j=0;j<pytania.length;j++)
+	{
+		i++;
+		odpowiedzi.push(prompt("Podaj odpowiedz na pytanie: "+i+ "\n"+pytania[j]));
+	}
+	
+	
+	for(let k=0;k<odpowiedzi.length;k++)
+	{
+		if(odpowiedzi[k]==poprawna[k])
+		{
+			wynik++;
 		}
+	}
+	
+	if(confirm("Podałeś "+wynik+" poprawnych odpowiedzi \n Czy chcesz rozwiązać quiz jeszcze raz?") == false)
 		
-		
+		{
+			break;
+		}
+	}
 	</script>
 	
 	</body>

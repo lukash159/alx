@@ -8,21 +8,169 @@
 	<body>
 	
 	<script>
-		
-		var liczba=1;
-		while(liczba!=101)
+	
+	class Pracownik
+	{
+		constructor(imie,nazwisko,kontrakt,pensja)
 		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
-			
-		liczba++;
-		
+			this.imie=imie;
+			this.nazwisko=nazwisko;
+			this.kontrakt=kontrakt;
+			this.pensja=pensja;
+		}
+	}
+	
+	class PracownikController
+	{
+		constructor()
+		{
+			this.pracownicy=[];
 		}
 		
+		dodaj(imie,nazwisko,kontrakt,pensja)
+		{
+			let pracownik = new Pracownik(imie,nazwisko,kontrakt,pensja);
+			this.pracownicy.push(pracownik);
+		}	
 		
+		pokaz()
+		{
+			console.clear();
+			for (let tmp of this.pracownicy)
+			{
+				console.log(tmp);
+			}
+		}
+		
+		usun(nazwisko)
+		{
+			for (let i=0;i<this.pracownicy.length;i++)
+			{
+				if( nazwisko == this.pracownicy[i].nazwisko)
+				{
+					this.pracownicy.splice(i,1);
+					break;
+				}
+			}
+		}
+		
+		zmien(nazwisko, pensja)
+		{
+			/*for (let i=0;i<this.pracownicy.length;i++)
+			{
+				if( nazwisko == this.pracownicy[i].nazwisko)
+				{
+					if(this.pracownicy[i].kontrakt=="s")
+					{
+						this.pracownicy[i].kontrakt="e";
+						this.pracownicy[i].pensja=pensja;
+						break;
+					}
+				}
+			}*/
+			
+			
+			for(let tmp of this.pracownicy)
+			{
+				if(nazwisko==tmp.nazwisko)
+				{
+					tmp.kontrakt="e";
+					tmp.pensja=pensja;
+					break;
+				}		
+			}
+		}
+		
+		wyszukaj(nazw)
+		{
+			console.clear();
+			for (let tmp of this.pracownicy)
+			{
+			let i=tmp.nazwisko.indexOf(nazw);
+				
+				if(i>-1)
+				{
+					console.log(tmp);
+				}
+			}
+		}
+	}
+	
+	class Firma extends PracownikController
+	{
+		constructor(nazwaFirmy)
+			{
+				super();
+				this.nazwaFirmy=nazwaFirmy;
+				this.menu();
+			}
+			
+	menu()
+		{	
+			while(true)
+			{
+				let dec = prompt("Witaj w firmie "+this.nazwaFirmy+" \n D-dodaj, P-pokaz, U-usun, Z-zmiana kontraktu, W-wyszukaj, Q-koniec");
+				
+				if (dec == "q")
+				{
+					break;
+				}
+				
+				if (dec == "d")
+				{
+					let imie = prompt("Podaj imie: ");
+					let nazwisko = prompt("Podaj nazwisko: ");
+					let kontrakt = prompt("kontrakt s/e ");
+					
+					if(kontrakt=="s")
+					{
+						let pensja="1000";
+						super.dodaj(imie,nazwisko,kontrakt,pensja);
+					}
+					else if (kontrakt=="e")
+					{
+						let pensja = prompt("Podaj pensję: ");
+						super.dodaj(imie,nazwisko,kontrakt,pensja);
+					}
+					
+					else
+					{
+						alert("Niepoprawny wybór kontraktu");
+					}
+				}
+				
+				if (dec == "p")
+				{
+					super.pokaz();
+				}
+				
+				if (dec == "u")
+				{
+					let naz = prompt("Podaj nazwisko do usunięcia ");
+					super.usun(naz);
+				}
+				
+				if (dec == "z")
+				{	
+					let naz = prompt("Podaj nazwisko do zmiany kontraktu ");
+					let pen = prompt("Podaj pensję ");
+					super.zmien(naz, pen);
+				}
+				
+				if (dec == "w")
+				{	
+					let naz = prompt("Podaj fraze do wyszukania ");
+					super.wyszukaj(naz);
+				}
+			}
+		}
+	}
+		
+		
+firma = new Firma("XYZ");
+
 	</script>
 	
 	</body>
 	</html>
+	

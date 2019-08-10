@@ -9,18 +9,25 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+	class A 
+		{
+			printA()
 			{
-			document.write(`${liczba}</br>`);
+				console.log("Tu klasa A");
 			}
-			
-		liczba++;
-		
 		}
 		
+		class B //extends A 
+		{
+			printB()
+			{
+				console.log("Tu klasa B");
+			}
+		}
+		
+		let obj = new B();
+		obj.printB();
+		obj.printA();
 		
 	</script>
 	

@@ -8,20 +8,38 @@
 	<body>
 	
 	<script>
-		
-		var liczba=1;
-		while(liczba!=101)
+
+	class Produkt
+	{
+		constructor(nazwa,cena)
 		{	
-			if(liczba%2==0)
-			{
-			document.write(`${liczba}</br>`);
-			}
-			
-		liczba++;
-		
+			this.nazwa=nazwa;
+			this.cena=cena;
 		}
-		
-		
+	}
+	
+	class Oprogramowanie extends Produkt
+	{
+		constructor(nazwa,cena,jezyk,system)
+		{	
+		super(nazwa,cena);
+			this.jezyk=jezyk;
+			this.system=system;
+		}
+	}
+	
+	class Szkolenia extends Oprogramowanie
+	{
+		constructor(nazwa,cena,jezyk,system,termin)
+		{	
+		super(nazwa,cena,jezyk,system);
+			this.termin=termin;
+		}
+	}
+	
+	obj= new Szkolenia("ProgJS", 100, "polski","Windows","2019-02-19");
+	console.log(obj.nazwa+", "+obj.cena+", "+obj.jezyk+", "+obj.system+", "+obj.termin);
+	
 	</script>
 	
 	</body>

@@ -9,18 +9,37 @@
 	
 	<script>
 		
-		var liczba=1;
-		while(liczba!=101)
-		{	
-			if(liczba%2==0)
+		class Zwierzeta
+		{
+			constructor(nazwa)
 			{
-			document.write(`${liczba}</br>`);
+				this.nazwa=nazwa;
 			}
-			
-		liczba++;
-		
 		}
 		
+		class Ladowe extends Zwierzeta 
+		{
+			constructor()
+			{
+				super();
+				this.liczbaNog="";
+			}
+		}
+		
+		class Wodne extends Zwierzeta 
+		{
+			constructor(liczbaPletw, nazwa)
+			{
+				super(nazwa);
+				this.liczbaPletw=liczbaPletw;
+			}
+		}
+		
+	obj = new Wodne(5,"Karas");
+	//obj.liczbaPletw=5;
+	//obj.nazwa="Karas";
+	
+	console.log(obj.liczbaPletw,obj.nazwa);
 		
 	</script>
 	

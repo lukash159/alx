@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pl">
+<head>
+	<title>81</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	
+	<table>
+	<tr>
+		<td style='width:400px;'>
+			<h1>Sklep</h1>
+			
+			<p>
+				<b>Rower</b> 
+				<br>ilość: <input type='text' id='Rower' size='1' value='1'> Cena: 950 zł 
+				<button onclick="add('Rower', '950')">Dodaj do koszyka</button>
+			</p>
+			<p>
+				<b>Telewizor</b> 
+				<br>ilość: <input type='text' id='Telewizor' size='1' value='1'> Cena: 999 zł 
+				<button onclick="add('Telewizor', '999')">Dodaj do koszyka</button>
+			</p>
+			<p>
+				<b>Telefon</b> 
+				<br>ilość: <input type='text' id='Telefon' size='1' value='1'> Cena: 129 zł 
+				<button onclick="add('Telefon', '129')">Dodaj do koszyka</button>
+			</p>
+			<p>
+				<b>Tablet</b> 
+				<br>ilość: <input type='text' id='Tablet' size='1' value='1'> Cena: 350 zł 
+				<button onclick="add('Tablet', '350')">Dodaj do koszyka</button>
+			</p>
+		
+		</td>
+		<td style='vertical-align:top;'>
+		
+			<h1>Twój koszyk</h1>
+			
+			<div id='koszyk'></div>
+		
+		</td>
+	</tr>
+	</table>
+	
+	<script type="text/javascript" src="81.js"></script>	
+
+</body>
+</html>

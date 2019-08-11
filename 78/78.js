@@ -43,15 +43,31 @@ function show()
 			html+=" Nazwisko:"+kontaktyFromStorage[i].nazwisko;
 			html+=" Nr telefonu:"+kontaktyFromStorage[i].telefon;
 			html+=" <a href='#' onclick=\"del('"+i+"')\">usun</a>";
+			html+=" <a href='#' onclick=\"edit('"+i+"')\">edytuj</a>";
 			html+="</li>";
 		}
 		html+="</ul>";
 		document.querySelector("#showUser").innerHTML=html;
 	}
 	
-function del(index)
+function edit(index)
 {
 	
+	kontaktyFromStorage=JSON.parse(localStorage.getItem("Kosiazka"));
+	
+	document.querySelector("#imie").value=kontaktyFromStorage[index].imie;
+	document.querySelector("#nazwisko").value=kontaktyFromStorage[index].nazwisko;
+	document.querySelector("#telefon").value=kontaktyFromStorage[index].telefon;
+	
+	
+	
+	//localStorage.setItem("Kosiazka",JSON.stringify(kontaktyFromStorage));
+	
+	show();
+}
+
+function del(index)
+{
 	kontaktyFromStorage=JSON.parse(localStorage.getItem("Kosiazka"));
 	kontaktyFromStorage.splice(index,1);
 	localStorage.setItem("Kosiazka",JSON.stringify(kontaktyFromStorage));

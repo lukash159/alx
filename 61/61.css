@@ -1,0 +1,15 @@
+.bold{
+	font-weight:bold;
+}
+
+.borderBottom{
+	border-bottom:1px solid red;
+}
+
+.fontSize30{
+	font-size:30px;
+}
+
+.colorRed{
+	color:red;
+}

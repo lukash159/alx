@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+
+<form action="/edit" method="post">
+<form>
+	<input type="hidden" name="id" value="<%=id %>"/>
+	<p>
+		<label>Tytuł</label><br/>
+		<input type="text" name="title" value="<%=item.title %>"/>
+	</p>
+	
+	<p>
+		<label>Treść</label><br/>
+		<textarea name="description"><%=item.description %></textarea>
+	</p>
+	
+	<p>
+		<input type="submit" value="Zapisz post"/>
+	</p>
+
+</form>
+
+
+<% include ../partials/footer %>

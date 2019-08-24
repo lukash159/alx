@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+	<ul>
+	<% posts.forEach(function(item, index){ %>
+	
+		<li>
+			<b><%=item.title%></b> 
+			<a href="details?id=<%=index %>">Pokaz szczegoly</a>
+			<a href="remove?id=<%=index %>">Usun</a>
+			<a href="edit?id=<%=index %>">Edytuj</a>
+			
+		</li>
+	<%});%>
+	</ul>
+		
+		
+
+<% include ../partials/footer %>

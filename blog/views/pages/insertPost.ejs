@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<h2>Formularz dodawania nowego posta do bloga</h2>
+<form action="/insertPost" method="post">
+<form>
+	
+	<p>
+		<label>Tytuł</label><br/>
+		<input type="text" name="title"/>
+	</p>
+	
+	<p>
+		<label>Treść</label><br/>
+		<textarea name="description"></textarea>
+	</p>
+	
+	<p>
+		<input type="submit" value="Dodaj nowy posr"/>
+	</p>
+
+</form>
+
+
+<% include ../partials/footer %>

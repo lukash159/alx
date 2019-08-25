@@ -3,6 +3,32 @@
 	<h2><%=post.title%></h2>
 	<p><%=post.description%></p>
 		
-		
+	-----------------------------------	<br>
+	<h3>Komentarze</h3>
+	<% if(post.comments.length==0) {%>
+		Obecnie brak komentarzy
+	<% } else {%>
+	<ul>
+	<% post.comments.forEach(function(item, index){ %>
+	
+		<li>
+			<b><%=item%></b> 
+			<a href="removeComment?id=<%=id %>&id2=<%=index %>">Usun komentarz</a>
+			
+		</li>
+	<%});%>
+	</ul>
+	<% } %>
+	
+	<h2>Dodaj komentarz</h2>
+		<form action='/insertComment' method='post'>
+		<input type="hidden" name="id" value="<%=id %>"/>
+	<p>
+		<textarea name="comment"></textarea>	
+	</p>
+	<p>
+		<input type="submit" value="Dodaj nowy komentarz"/>
+	</p>
+	</form>
 
 <% include ../partials/footer %>

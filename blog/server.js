@@ -37,7 +37,8 @@ app.post("/insertPost",function(req,res){
 	
 	obj = {
 		title: req.body['title'],
-		description: req.body['description']
+		description: req.body['description'],
+		comments:[]
 	}
 	
 	posts.push(obj);
@@ -51,7 +52,8 @@ app.get("/details",function(req,res){
 	
 	let id=req.query.id;
 		res.render("pages/details",{
-		post: posts[id]
+		post: posts[id],
+		id:id
 		});
 	
 });
@@ -91,6 +93,35 @@ app.post("/edit",function(req,res){
 	
 });
 
+app.post("/insertComment",function(req,res){
+	
+	obj = {
+		title: req.body['title'],
+		description: req.body['description'],
+		comments:[]
+	}
+	let id=req.body['id'];
+	let com=req.body['comment'];
+	posts[id].comments.push(com);
+	console.log(posts[id]);
+	res.render("pages/details",{
+		post: posts[id],
+		id:id
+		});
+});
+
+app.get("/removeComment",function(req,res){
+		
+	let id=req.query['id'];
+	let id2=req.query['id2'];
+	posts[id].comments.splice(id2,1);
+	res.render("pages/details",{
+		post: posts[id],
+		id:id
+		});
+		
+	
+});
 
 	
 	
